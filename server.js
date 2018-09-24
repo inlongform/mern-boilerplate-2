@@ -1,11 +1,11 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const path = require("path");
-const users = require("./routes/api/users");
-const passport = require("passport");
-const cors = require("cors");
-const helmet = require("helmet");
+import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
+import path from "path";
+import users from "./routes/api/v1/users";
+import passport from "passport";
+import cors from "cors";
+import helmet from "helmet";
 
 const app = express();
 
@@ -30,7 +30,7 @@ passport.use(passport.initialize());
 // require("./config/passport")(passport);
 
 //use routes
-app.use("/api/users", users);
+app.use("/api/v1/users", users);
 
 //serve static assets if in production
 if (process.env.NODE_ENV === "production") {

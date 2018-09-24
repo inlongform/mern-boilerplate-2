@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getUsers = () => dispatch => {
   axios
-    .get("/api/users")
+    .get("/api/v1/users")
     .then(res => {
       console.log(res);
       dispatch({
